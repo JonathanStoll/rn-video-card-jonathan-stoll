@@ -1,5 +1,7 @@
 ﻿# RN Video Player Card
 
+![CI](https://github.com/JonathanStoll/rn-video-card-jonathan-stoll/actions/workflows/ci.yml/badge.svg)
+
 A small React Native (Expo) component built for the DIRECTV take-home exercise — a mock "now playing"
 card that displays program information, with an animated progress bar and a tap-to-expand layout.
 
@@ -80,3 +82,8 @@ have outweighed any benefit. I pointed that out and it agreed and removed it.
 progress bar filling on mount and the tap-to-expand layout. This time I didn't need to change anything.
 The design and styling came out exactly how I would have wanted it, and the animation behaviour worked
 correctly first time. I was pleased with the result and merged it as-is.
+
+**After building the main features, I used AI to go through each criteria of the challenge one by one**
+to check whether anything had been missed or done incorrectly. That review did catch something: the prop
+names on the component (`logoInitials`, `logoColor`, `description`) didn't match the names specified in
+the brief (`channelInitials`, `channelColor`, `programDescription`). I fixed those before submitting.

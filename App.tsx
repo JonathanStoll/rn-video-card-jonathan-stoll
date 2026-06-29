@@ -11,11 +11,11 @@ export default function App() {
           <VideoPlayerCard
             channelName="ESPN"
             programTitle="SportsCenter"
-            description="The latest scores, highlights, and analysis from across the world of sports, with live updates on every major game in progress tonight."
+            programDescription="The latest scores, highlights, and analysis from across the world of sports, with live updates on every major game in progress tonight."
             durationMinutes={132}
             elapsedMinutes={49}
-            logoColor="#CC0000"
-            logoInitials="ESPN"
+            channelColor="#CC0000"
+            channelInitials="ESPN"
           />
         </View>
       </SafeAreaView>

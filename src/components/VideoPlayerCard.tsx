@@ -18,7 +18,7 @@ export interface VideoPlayerCardProps {
   /** Title of the currently playing program. */
   programTitle: string;
   /** Program synopsis — rendered with a 2-line clamp when expanded. */
-  description: string;
+  programDescription: string;
   /** Total program duration in minutes. */
   durationMinutes: number;
   /** How many minutes of the program have elapsed. */
@@ -27,9 +27,9 @@ export interface VideoPlayerCardProps {
    * Background colour for the channel logo placeholder.
    * Any CSS-compatible colour string works, e.g. `"#E8000D"` or `"royalblue"`.
    */
-  logoColor: string;
+  channelColor: string;
   /** 1–4 character string rendered inside the logo placeholder, e.g. `"ESPN"`. */
-  logoInitials: string;
+  channelInitials: string;
 }
 
 const FILL_MS = 900;
@@ -46,11 +46,11 @@ const ACCENT = '#0057FF';
 export function VideoPlayerCard({
   channelName,
   programTitle,
-  description,
+  programDescription,
   durationMinutes,
   elapsedMinutes,
-  logoColor,
-  logoInitials,
+  channelColor,
+  channelInitials,
 }: VideoPlayerCardProps) {
   const { progressPercent, timeRemainingLabel } = usePlaybackProgress(
     durationMinutes,
@@ -106,9 +106,9 @@ export function VideoPlayerCard({
 
         {/* ── Always visible: header + progress bar ── */}
         <View style={styles.header}>
-          <View style={[styles.logo, { backgroundColor: logoColor }]}>
+          <View style={[styles.logo, { backgroundColor: channelColor }]}>
             <Text style={styles.logoInitials} numberOfLines={1}>
-              {logoInitials}
+              {channelInitials}
             </Text>
           </View>
 
@@ -133,7 +133,7 @@ export function VideoPlayerCard({
               computes layout independently of overflow clipping. */}
           <View onLayout={onCollapsibleLayout} style={styles.collapsibleInner}>
             <Text style={styles.description} numberOfLines={2}>
-              {description}
+              {programDescription}
             </Text>
             <Text style={styles.timeRemaining}>{timeRemainingLabel}</Text>
           </View>
