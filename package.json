@@ -29,7 +29,7 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "typecheck": "tsc",
-    "test": "jest --passWithNoTests"
+    "test": "jest"
   },
   "jest": {
     "preset": "jest-expo"

@@ -70,3 +70,8 @@ that, but tends to be less smooth for this kind of animation.
 **What I prompted it to do.** I gave the AI the exercise brief and asked it to expand the requirements and
 turn them into a detailed, step-by-step action plan with a checklist of every deliverable, so I could work
 through the challenge in a sensible order without missing anything.
+
+\*\*I prompted it to write the `usePlaybackProgress` hook and its Jest tests. The output was solid, but I
+caught one thing worth fixing: it had wrapped the body in `useMemo`, which made no sense for a calculation
+this small — two arithmetic operations don't need memoisation, and the overhead of the cache lookup would
+have outweighed any benefit. I pointed that out and it agreed and removed it.
